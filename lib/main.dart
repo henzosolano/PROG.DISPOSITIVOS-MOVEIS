@@ -4,7 +4,13 @@ void main(){
   runApp(
     MaterialApp(
       home: Scaffold(
-        body: Text("teste")
+        appBar: AppBar(
+          backgroundColor: Colors.purpleAccent,
+          title: Center(
+            child: Text("nome do meu app")
+          )
+        ),
+        body: Text("teste"),
       )
     )
   );
