@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 
-void main(){
+void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 176, 102, 189),
+          backgroundColor: Colors.purpleAccent,
           title: Center(
             child: Text("nome do meu app")
-          )
+            ),
         ),
         body: Center(
-          child: Column(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("olá, mundo!"),
-            Text("23/03/26")
-          ],
+            children: [
+              Text("olá, mundo!"),
+              Icon(Icons.add_location_sharp)
+              ],
+          ),
         ),
-        )
-      )
-    )
+      ),
+    ),
   );
 }
