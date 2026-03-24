@@ -5,12 +5,20 @@ void main(){
     MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.purpleAccent,
+          backgroundColor: const Color.fromARGB(255, 176, 102, 189),
           title: Center(
             child: Text("nome do meu app")
           )
         ),
-        body: Text("teste"),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("olá, mundo!"),
+            Text("23/03/26")
+          ],
+        ),
+        )
       )
     )
   );
