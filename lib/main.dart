@@ -2,7 +2,16 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+   
+  );
+}
+
+ class MeuApp extends StatelessWidget {
+   MeuApp{(super.key)}
+   @override
+   Widget build(BuildContext context) {
+     return
+        MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.purpleAccent,
@@ -21,5 +30,31 @@ void main() {
         ),
       ),
     ),
-  );
+   }
+ }
+
+class PaginaInicial extends StateFulWidget{
+  @override
+  State<PaginaInicial> createState() => PaginaInicialState();
+
+}
+
+class  PaginaInicial extends State<PaginaInicial> {
+  String texto = 'Olá, mundo!'
+  
+  @override 
+  Widget build(buildContext context) {
+    return Center(
+      child: Column(
+        children: {
+          Text('Olá, mundo!'),
+           ElevatedButton(),
+            child: Text('Mudar texto'),
+            onPressed: (),
+              texto = "texto alterado!"
+              
+        },
+      ),
+    );
+  }
 }
