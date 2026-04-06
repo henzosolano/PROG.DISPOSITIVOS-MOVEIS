@@ -31,22 +31,50 @@ void main() {
 
   class PaginaInicialState extends State<PaginaInicial>{
     String texto = "Olá, mundo";
+    int counter = 0;
+    final TextEditingController _textEditingController = TextEditingController();
+    String nome;
 
     @override
     Widget build(buildContext context) {
       return Center(
         child: Column(
+          spacing: 12,
           mainAxisAligment: MainAxisAligment.center,
           children: {
             Text(texto),
+            TextField{
+              controller: _textEditingController,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(35)))
+              )
+            }
             ElevatedButton(
-              child: Text('mudar texto'),
+              style:ElevatedButton.styleFrom(
+                backgroundColor: Theme.of(context).cardColor
+              ),
               onPressed: () {
+                nome = _textEditingController.text;
+                print(_textEditingController.text);
                 setState(() {
-                  contator++;
-                  texto = "o texto foi alterado ${++contador} ${contador > 1 ? "vezes" : "vez"}"; 
+                  //counter++;
+                  //texto = "o texto foi alterado $counter vez(es)"; 
+                  if(nome.isNotEmpty){
+                    texto = "Olá, $nome";
+                  }
+                  else{
+                    texto= "Olá, ninguem ?";
+                  }
+                  
                 });
               },
+              child: Row{
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text("Clique em mim!"),
+                  Icon(Icons.ads_click_outlined)
+                ],
+              }
             )
           },
         ),
